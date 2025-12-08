@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Χριστουγεννιάτικες Συνταγές</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#c47f2a; --muted:#9aa4b2; --glass: rgba(255,255,255,0.04);
+      --maxw:1100px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0; background:linear-gradient(180deg,#071026 0%, #071829 60%); color:#e6eef6; -webkit-font-smoothing:antialiased}
+    header{padding:36px 20px; text-align:center}
+    .container{max-width:var(--maxw); margin:0 auto; padding:20px}
+    h1{margin:0;font-size:clamp(1.6rem,3vw,2.4rem); letter-spacing:0.6px}
+    p.lead{color:var(--muted); margin-top:8px}
+
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; margin-top:28px}
+    .card{background:linear-gradient(180deg,var(--card), #071826 120%); border-radius:14px; padding:18px; box-shadow:0 6px 30px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03)}
+    .recipe-hero{display:flex; gap:14px; align-items:center}
+    .badge{width:84px; height:84px; border-radius:10px; background:var(--glass); display:flex; align-items:center; justify-content:center; flex-shrink:0}
+    .badge svg{width:64px;height:64px; opacity:0.95}
+    .meta{flex:1}
+    .meta h2{margin:0;font-size:1.125rem}
+    .meta .sub{color:var(--muted); font-size:0.9rem; margin-top:6px}
+
+    .tags{margin-top:12px; display:flex; gap:8px; flex-wrap:wrap}
+    .tag{background:rgba(255,255,255,0.03); color:var(--muted); padding:6px 10px; border-radius:999px; font-size:0.82rem}
+
+    ul.ingredients{margin:12px 0 0 0; padding-left:18px; color:#dfe9f6}
+    ol.steps{margin:12px 0 0 0; padding-left:18px; color:#e9f2ff}
+
+    .card-footer{display:flex; gap:12px; justify-content:space-between; align-items:center; margin-top:14px}
+    .pill{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:6px 10px; border-radius:10px; font-size:0.85rem; color:var(--muted)}
+
+    /* printable recipe card */
+    @media print{
+      body{background:white; color:black}
+      header, .nav, .badge svg{display:none}
+      .card{break-inside:avoid; border:1px solid #ccc}
+    }
+
+    /* accessible focus */
+    a, button{outline:none}
+    a:focus, button:focus{box-shadow:0 0 0 3px rgba(196,127,42,0.18)}
+
+    footer{margin:36px 0 80px 0; text-align:center; color:var(--muted)}
+
+    /* small helpers */
+    .time{font-weight:600; color:var(--accent)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Χριστουγεννιάτικες Συνταγές</h1>
+      <p class="lead">Τέσσερις αγαπημένες συνταγές για τα γιορτινά τραπέζια — απλές, νόστιμες και γραμμένες στα ελληνικά.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="grid">
+
+      <!-- Recipe 1 -->
+      <article class="card" id="melomakarona">
+        <div class="recipe-hero">
+          <div class="badge" aria-hidden="true">
+            <!-- honey jar svg -->
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="8" y="16" width="48" height="36" rx="6" fill="url(#g)"/>
+              <path d="M20 16c0-4 4-6 12-6s12 2 12 6" stroke="#f6d6a5" stroke-width="2" stroke-linecap="round"/>
+              <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#ffd89a"/><stop offset="1" stop-color="#f7a44c"/></linearGradient></defs>
+            </svg>
+          </div>
+          <div class="meta">
+            <h2>Μελομακάρονα (κλασικά)</h2>
+            <div class="sub">Σερβίρει 18–24 | <span class="time">Προετοιμασία 25' • Ψήσιμο 25'</span></div>
+            <div class="tags">
+              <span class="tag">Χριστουγεννιάτικο</span>
+              <span class="tag">Γλυκό</span>
+              <span class="tag">Παραδοσιακό</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>Υλικά</h3>
+          <ul class="ingredients">
+            <li>500γρ αλεύρι για όλες τις χρήσεις</li>
+            <li>120γρ σιμιγδάλι</li>
+            <li>200γρ ελαιόλαδο</li>
+            <li>120γρ ζάχαρη κρυσταλλική</li>
+            <li>50γρ πορτοκάλι χυμός</li>
+            <li>1 κ.γλ. κανέλα, 1/2 κ.γλ. γαρύφαλλο τριμμένο</li>
+            <li>1 κ.γλ. μπέικιν</li>
+            <li>Μέλι για σιρόπιασμα & ψιλοκομμένο καρύδι για το σερβίρισμα</li>
+          </ul>
+
+          <h3>Οδηγίες</h3>
+          <ol class="steps">
+            <li>Αναμίξτε λάδι και ζάχαρη μέχρι να λιώσει ελαφρά. Προσθέστε χυμό πορτοκαλιού και μπαχαρικά.</li>
+            <li>Ενσωματώστε το σιμιγδάλι, το αλεύρι και το μπέικιν, ζυμώστε απαλά — η ζύμη πρέπει να είναι μαλακή αλλά όχι κολλώδης.</li>
+            <li>Πλάστε μικρά οβάλ μπισκότα, τοποθετήστε σε λαμαρίνα και ψήστε σε 180°C για ~25 λεπτά μέχρι να ροδίσουν.</li>
+            <li>Ζεστάνετε μέλι με λίγο νερό και περιχύστε τα ζεστά μελομακάρονα. Πασπαλίστε με ψιλοκομμένο καρύδι.</li>
+          </ol>
+        </div>
+        <div class="card-footer">
+          <div class="pill">Καλύτερα την ίδια μέρα</div>
+          <div class="pill">Δυσκολία: Μέτρια</div>
+        </div>
+      </article>
+
+      <!-- Recipe 2 -->
+      <article class="card" id="melopita">
+        <div class="recipe-hero">
+          <div class="badge" aria-hidden="true">
+            <!-- apple svg -->
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="32" cy="32" r="22" fill="#ffebc8"/>
+              <path d="M36 16c2 3 1 6-1 9-2 3-6 5-9 3-3-2-6-6-4-9 2-4 8-6 14-3z" fill="#f4a261"/>
+            </svg>
+          </div>
+          <div class="meta">
+            <h2>Μηλόπιτα με κανέλα</h2>
+            <div class="sub">Σερβίρει 8 | <span class="time">Προετοιμασία 20' • Ψήσιμο 40'</span></div>
+            <div class="tags">
+              <span class="tag">Επιδόρπιο</span>
+              <span class="tag">Κλασικό</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>Υλικά</h3>
+          <ul class="ingredients">
+            <li>1 έτοιμη ζύμη σφολιάτας ή τάρτας</li>
+            <li>5 μεγάλα μήλα (κομμένα σε φέτες)</li>
+            <li>100γρ ζάχαρη + 1 κ.σ. για το πασπάλισμα</li>
+            <li>1 κ.σ. κανέλα, 1 κ.γλ. βανίλια</li>
+            <li>50γρ βούτυρο κομμένο σε κύβους</li>
+            <li>Χυμός από 1/2 λεμόνι
+            </li>
+          </ul>
+          <h3>Οδηγίες</h3>
+          <ol class="steps">
+            <li>Προθερμάνετε στους 180°C. Τοποθετήστε τη ζύμη σε ταρτιέρα και τρυπήστε τον πάτο με πιρούνι.</li>
+            <li>Ανακατέψτε τα μήλα με ζάχαρη, λεμόνι, κανέλα και βανίλια. Απλώστε πάνω στη ζύμη και τοποθετήστε μικρά κομμάτια βουτύρου.</li>
+            <li>Ψήστε 35–45 λεπτά έως ότου πάρει χρυσαφένιο χρώμα. Αφήστε να κρυώσει πριν σερβίρετε.</li>
+          </ol>
+        </div>
+        <div class="card-footer">
+          <div class="pill">Σερβίρεται με παγωτό βανίλια</div>
+          <div class="pill">Δυσκολία: Εύκολη</div>
+        </div>
+      </article>
+
+      <!-- Recipe 3 -->
+      <article class="card" id="porc-orange">
+        <div class="recipe-hero">
+          <div class="badge" aria-hidden="true">
+            <!-- roast svg -->
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="10" y="18" width="44" height="28" rx="6" fill="#ffd6b3"/>
+              <path d="M18 30c6-6 14-6 20 0" stroke="#b25a1a" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="meta">
+            <h2>Χοιρινό ψητό με πορτοκάλι & δεντρολίβανο</h2>
+            <div class="sub">Σερβίρει 6–8 | <span class="time">Προετοιμασία 20' • Ψήσιμο 1h 15'</span></div>
+            <div class="tags">
+              <span class="tag">Κυρίως πιάτο</span>
+              <span class="tag">Γιορτινό</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>Υλικά</h3>
+          <ul class="ingredients">
+            <li>1.8–2.2 κιλά χοιρινό μπούτι ή σπάλα</li>
+            <li>3–4 πορτοκάλια (χυμός + ξύσμα)</li>
+            <li>4 σκελίδες σκόρδο λιωμένες</li>
+            <li>2 κ.σ. μέλι, 2 κ.σ. μουστάρδα, 2 κ.σ. ελαιόλαδο</li>
+            <li>Φρέσκο δεντρολίβανο, αλάτι & φρεσκοτριμμένο πιπέρι</li>
+          </ul>
+          <h3>Οδηγίες</h3>
+          <ol class="steps">
+            <li>Ανακατέψτε χυμό πορτοκαλιού, ξύσμα, μέλι, μουστάρδα, σκόρδο και λάδι. Μαρινάρετε το κρέας για 1–3 ώρες (ή όλη νύχτα).</li>
+            <li>Προθερμάνετε φούρνο στους 170°C. Ψήστε το χοιρινό σε ροδέλα για ~1 ώρα 15' ή έως ότου η εσωτερική θερμοκρασία φτάσει 70–72°C.</li>
+            <li>Σοτάρετε τα υγρά μαρινάδας σε κατσαρολάκι μέχρι να δέσει ελαφρά — περιχύστε το κρέας πριν σερβίρετε.</li>
+          </ol>
+        </div>
+        <div class="card-footer">
+          <div class="pill">Ιδανικό για μεγάλο τραπέζι</div>
+          <div class="pill">Δυσκολία: Μέτρια</div>
+        </div>
+      </article>
+
+      <!-- Recipe 4 -->
+      <article class="card" id="souffle">
+        <div class="recipe-hero">
+          <div class="badge" aria-hidden="true">
+            <!-- chocolate svg -->
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="12" y="18" width="40" height="28" rx="6" fill="#e7d4c3"/>
+              <circle cx="32" cy="28" r="6" fill="#4b2e2e"/>
+            </svg>
+          </div>
+          <div class="meta">
+            <h2>Σουφλέ σοκολάτας (ατομικά)</h2>
+            <div class="sub">Σερβίρει 4 | <span class="time">Προετοιμασία 15' • Ψήσιμο 12–14'</span></div>
+            <div class="tags">
+              <span class="tag">Επιδόρπιο</span>
+              <span class="tag">Εντυπωσιακό</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>Υλικά</h3>
+          <ul class="ingredients">
+            <li>120γρ κουβερτούρα 70%</li>
+            <li>120γρ βούτυρο</li>
+            <li>3 αυγά (διαχωρισμένα)</li>
+            <li>60γρ ζάχαρη, 1 κ.σ. αλεύρι</li>
+            <li>Λίγη ζάχαρη για τα φορμάκια</li>
+          </ul>
+          <h3>Οδηγίες</h3>
+          <ol class="steps">
+            <li>Προθερμάνετε φούρνο στους 200°C. Βουτυρώστε και πασπαλίστε ζάχαρη σε 4 φορμάκια.</li>
+            <li>Λιώστε την κουβερτούρα με το βούτυρο σε μπεν μαρί. Ανακατέψτε τους κρόκους με τη μισή ζάχαρη και προσθέστε στο μείγμα σοκολάτας.</li>
+            <li>Χτυπήστε τα ασπράδια σε σφιχτή μαρέγκα με την υπόλοιπη ζάχαρη και ενσωματώστε απαλά στο μείγμα. Γεμίστε τα φορμάκια και ψήστε 12–14 λεπτά.</li>
+            <li>Σερβίρετε αμέσως με παγωτό ή σιρόπι φρούτων.</li>
+          </ol>
+        </div>
+        <div class="card-footer">
+          <div class="pill">Σερβίρετε ζεστό — ροή σοκολάτας!</div>
+          <div class="pill">Δυσκολία: Μέτρια</div>
+        </div>
+      </article>
+
+    </section>
+
+    <footer>
+      <p>Καλή όρεξη και χαρούμενες γιορτές! — Μικρές οδηγίες & χρόνοι είναι ενδεικτικοί.</p>
+    </footer>
+
+  </main>
+</body>
+</html>
+
+  
