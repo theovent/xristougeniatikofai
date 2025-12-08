@@ -4,53 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Χριστουγεννιάτικες Συνταγές</title>
-  <style>
-    :root{
-      --bg:#0f1724; --card:#0b1220; --accent:#c47f2a; --muted:#9aa4b2; --glass: rgba(255,255,255,0.04);
-      --maxw:1100px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-    *{box-sizing:border-box}
-    body{margin:0; background:linear-gradient(180deg,#071026 0%, #071829 60%); color:#e6eef6; -webkit-font-smoothing:antialiased}
-    header{padding:36px 20px; text-align:center}
-    .container{max-width:var(--maxw); margin:0 auto; padding:20px}
-    h1{margin:0;font-size:clamp(1.6rem,3vw,2.4rem); letter-spacing:0.6px}
-    p.lead{color:var(--muted); margin-top:8px}
-
-    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; margin-top:28px}
-    .card{background:linear-gradient(180deg,var(--card), #071826 120%); border-radius:14px; padding:18px; box-shadow:0 6px 30px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03)}
-    .recipe-hero{display:flex; gap:14px; align-items:center}
-    .badge{width:84px; height:84px; border-radius:10px; background:var(--glass); display:flex; align-items:center; justify-content:center; flex-shrink:0}
-    .badge svg{width:64px;height:64px; opacity:0.95}
-    .meta{flex:1}
-    .meta h2{margin:0;font-size:1.125rem}
-    .meta .sub{color:var(--muted); font-size:0.9rem; margin-top:6px}
-
-    .tags{margin-top:12px; display:flex; gap:8px; flex-wrap:wrap}
-    .tag{background:rgba(255,255,255,0.03); color:var(--muted); padding:6px 10px; border-radius:999px; font-size:0.82rem}
-
-    ul.ingredients{margin:12px 0 0 0; padding-left:18px; color:#dfe9f6}
-    ol.steps{margin:12px 0 0 0; padding-left:18px; color:#e9f2ff}
-
-    .card-footer{display:flex; gap:12px; justify-content:space-between; align-items:center; margin-top:14px}
-    .pill{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:6px 10px; border-radius:10px; font-size:0.85rem; color:var(--muted)}
-
-    /* printable recipe card */
-    @media print{
-      body{background:white; color:black}
-      header, .nav, .badge svg{display:none}
-      .card{break-inside:avoid; border:1px solid #ccc}
-    }
-
-    /* accessible focus */
-    a, button{outline:none}
-    a:focus, button:focus{box-shadow:0 0 0 3px rgba(196,127,42,0.18)}
-
-    footer{margin:36px 0 80px 0; text-align:center; color:var(--muted)}
-
-    /* small helpers */
-    .time{font-weight:600; color:var(--accent)}
-  </style>
-</head>
+  </head>
 <body>
   <header>
     <div class="container">
