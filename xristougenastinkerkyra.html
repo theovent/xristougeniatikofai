@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Χριστούγεννα Κέρκυρα - Πλήρης Ιστοσελίδα</title>
+<style>
+body{margin:0;font-family:Montserrat,sans-serif;background:#0b1226;color:#eaf0f6;overflow-x:hidden;scroll-behavior:smooth;}
+header{padding:20px;background:rgba(10,15,25,0.7);position:sticky;top:0;z-index:1000;backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:space-between;}
+header h1{margin:0;font-size:20px;color:#caa94b;}
+nav a{color:#eaf0f6;margin-left:12px;text-decoration:none;font-weight:600;}
+.card{background:rgba(255,255,255,0.05);border-radius:12px;padding:20px;margin:18px;box-shadow:0 6px 20px rgba(0,0,0,0.5);}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;}
+.feature{padding:12px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.03);}
+.candle{width:40px;height:80px;background:#fff3d1;border-radius:6px;position:relative;box-shadow:0 0 10px gold inset;display:inline-block;margin-right:10px;}
+.flame{position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:16px;height:22px;background:orange;border-radius:50%;filter:blur(2px);animation:flicker 0.12s infinite alternate;opacity:0.9;}
+@keyframes flicker{0%{transform:translateX(-50%) scale(1);}100%{transform:translateX(-50%) scale(1.2);}}
+@keyframes bellSwing{0%{transform:rotate(0deg);}50%{transform:rotate(14deg);}100%{transform:rotate(0deg);}}
+button.chip{padding:6px 10px;border-radius:20px;border:none;background:#caa94b;color:#072033;font-weight:600;cursor:pointer;margin:4px;}
+canvas{display:block;margin:12px auto;border-radius:10px;}
+img{max-width:100%;border-radius:12px;}
+</style>
+</head>
+<body>
+<header>
+<h1>Χριστούγεννα Κέρκυρας</h1>
+<nav><a href="#traditions">Έθιμα</a><a href="#gallery">Gallery</a><a href="#extras">Πλούσια Features</a><a href="#interactive">Interactive</a></nav>
+</header>
+<main>
+<div class="card" id="traditions">
+<h2>Έθιμα & Ήθη</h2>
+<p>Φιλαρμονικές, καντάδες, παραδοσιακά γλυκά και τοπικές εκδηλώσεις γεμίζουν την Κέρκυρα γιορτινή ατμόσφαιρα.</p>
+<div class="features">
+<div class="feature"><h3>Κάλαντα & Φιλαρμονικές</h3><p>Μουσικές παρελάσεις και παραδοσιακά τραγούδια στους δρόμους.</p></div>
+<div class="feature"><h3>Γλυκά</h3><p>Σαβόρο, κουραμπιέδες, μελομακάρονα και μαντολάτο.</p></div>
+<div class="feature"><h3>Παραδοσιακές Δραστηριότητες</h3><p>Χτυπήματα κοπανών, Καλή Χέρα και επισκέψεις σε οικογένειες.</p></div>
+<div class="feature"><h3>Στολισμός Καντινέλων</h3><p>Παραδοσιακά φωτιστικά στις παλιές γειτονιές.</p></div>
+<div class="feature"><h3>Χριστουγεννιάτικη Αγορά Σπιανάδα</h3><p>Με τοπικά προϊόντα και χειροποίητες δημιουργίες.</p></div>
+<div class="feature"><h3>Χορωδίες Εκκλησιών</h3><p>Πολυφωνικές ψαλμωδίες με βενετσιάνικη επιρροή.</p></div>
+</div>
+</div>
+<div class="card" id="gallery">
+<h2>Gallery</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Corfu_Liston_square.jpg" alt="Liston" onclick="openLightbox(this)">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Corfu_old_fortress.jpg" alt="Old Fortress" onclick="openLightbox(this)">
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Corfu_cantades.jpg" alt="Cantades" onclick="openLightbox(this)">
+<div id="lightbox" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;z-index:9999;">
+<img id="lbFull" style="max-width:80%;max-height:80%;border-radius:12px;">
+</div>
+</div>
+<div class="card" id="extras">
+<h2>Extra Features</h2>
+<div>
+<div class="candle"><div class="flame"></div></div>
+<img src="https://cdn-icons-png.flaticon.com/256/343/343382.png" style="width:60px;animation:bellSwing 1.2s infinite ease-in-out;">
+</div>
+<button class="chip" id="candleModeBtn">🕯️ Άναψε Ζεστό Φως</button>
+<canvas id="snowCanvas" width="window.innerWidth" height="window.innerHeight"></canvas>
+<canvas id="eqCanvas" width="320" height="80"></canvas>
+<img id="hiddenGift" src="https://cdn-icons-png.flaticon.com/256/254/254077.png" style="width:40px;position:absolute;top:300px;left:70%;cursor:pointer;filter:drop-shadow(0 0 8px gold);">
+</div>
+<div class="card" id="interactive">
+<h2>Interactive Features</h2>
+<h3>3D Περιστρεφόμενο Δέντρο</h3>
+<div style="width:180px;height:260px;margin:14px auto;perspective:600px;"><div id="tree3d" style="width:100%;height:100%;position:relative;transform-style:preserve-3d;animation:spin 10s linear infinite"></div></div>
+<h3>Βίντεο Καντάδες</h3>
+<iframe width="100%" height="250" style="border-radius:12px" src="https://www.youtube.com/embed/KlJDyYQyLjs" title="Καντάδες Κέρκυρας" allowfullscreen></iframe>
+<h3>Διαδραστικός Χάρτης</h3>
+<iframe style="margin-top:10px;border-radius:12px" width="100%" height="250" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3104.87538698794!2d19.923745!3d39.624983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135a5f8c5bcd2e33%3A0x4f1adb5cd97ad949!2zzpHOuc-BzrHPhM6uz4Igz4HOu86xz4TOtc-Dz4HOvw!5e0!3m2!1sel!2sgr!4v1700000000" allowfullscreen loading="lazy"></iframe>
+<h3>Voice-over Αφήγηση</h3>
+<button id="speakBtn" class="chip">🔊 Ξεκίνα Αφήγηση</button>
+</div>
+</main>
+<script>
+// Lightbox
+function openLightbox(img){const lb=document.getElementById('lightbox');const lbFull=document.getElementById('lbFull');lb.style.display='flex';lbFull.src=img.src;}
+document.getElementById('lightbox').onclick=function(){this.style.display='none';};
+// Candle-light mode
+let warm=false;document.getElementById('candleModeBtn').onclick=function(){if(!warm){document.body.style.background='radial-gradient(circle,#3b2b1a,#0d0d0d)';this.textContent='💡 Κανονικό Φως';}else{document.body.style.background='linear-gradient(135deg,#0b0f14,#1a222d)';this.textContent='🕯️ Άναψε Ζεστό Φως';}warm=!warm;};
+// Snow particles
+const snowCanvas=document.getElementById('snowCanvas');const ctx=snowCanvas.getContext('2d');snowCanvas.width=window.innerWidth;snowCanvas.height=window.innerHeight;const snow=[];for(let i=0;i<120;i++)snow.push({x:Math.random()*window.innerWidth,y:Math.random()*window.innerHeight,r:Math.random()*3+1,d:Math.random()*1});function drawSnow(){ctx.clearRect(0,0,window.innerWidth,window.innerHeight);ctx.fillStyle='white';ctx.beginPath();snow.forEach(f=>{ctx.moveTo(f.x,f.y);ctx.arc(f.x,f.y,f.r,0,Math.PI*2,true);f.y+=f.d;f.x+=Math.sin(f.y*0.01);if(f.y>window.innerHeight){f.y=0;f.x=Math.random()*window.innerWidth;}});ctx.fill();}setInterval(drawSnow,33);
+// EQ Animation
+const eq=document.getElementById('eqCanvas');const ectx=eq.getContext('2d');function animateEQ(){ectx.clearRect(0,0,320,80);for(let i=0;i<32;i++){let h=Math.random()*80;ectx.fillStyle='white';ectx.fillRect(i*10,80-h,8,h);}requestAnimationFrame(animateEQ);}animateEQ();
+// Hidden Gift Game
+document.getElementById('hiddenGift').onclick=function(){alert('Μπράβο! Βρήκες το κρυμμένο δώρο! 🎄');this.style.opacity=0;};
+// 3D Tree
+const tree=document.getElementById('tree3d');for(let i=0;i<14;i++){const ring=document.createElement('div');const size=180-(i*10);ring.style.width=size+'px';ring.style.height='10px';ring.style.borderRadius='50%';ring.style.background='green';ring.style.position='absolute';ring.style.top=(20+i*16)+'px';ring.style.left='50%';ring.style.transform='translateX(-50%)';ring.style.opacity=0.9;tree.appendChild(ring);}
+// Spin animation
+const styleSheet=document.createElement('style');styleSheet.innerHTML='@keyframes spin{from{transform:rotateY(0deg)}to{transform:rotateY(360deg)}}';document.head.appendChild(styleSheet);
+// Voice-over
+document.getElementById('speakBtn').onclick=()=>{const msg=new SpeechSynthesisUtterance('Καλώς ήρθες στα Χριστούγεννα της Κέρκυρας. Οι φιλαρμονικές, οι καντάδες, τα γλυκά και τα φωτεινά καντινέλα δίνουν στο νησί την πιο γιορτινή του εικόνα.');msg.lang='el-GR';speechSynthesis.speak(msg);};
+</script>
+</body>
+</html>
